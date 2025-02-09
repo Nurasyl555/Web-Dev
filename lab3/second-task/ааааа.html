@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="main.css">
+        <title>To-Do List</title>
+    </head>
+    <body>
+        <header><h3>ToDo list</h3></header>
+        <div class="adder">
+        <h2>To Do List</h2>
+        <input type="text" id="taskInput" placeholder="write task">
+        <button onclick="addTask()">add</button>
+        </div>
+        <ul id="taskList"></ul>
+        <script>
+            
+            function addTask() {
+                let taskInput = document.getElementById("taskInput");
+                let taskText = taskInput.value.trim();
+                if(taskText === ""){ return}
+
+                let li = document.createElement("li");
+
+                let checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+
+                let taskTextElement = document.createElement("span");
+                taskTextElement.textContent = taskText;
+
+                checkbox.onchange = function(){
+                    if(this.checked){
+                        taskTextElement.style.textDecoration = "line-through";
+                    }else{
+                        taskTextElement.style.textDecoration = "none";
+                    }
+                };
+
+
+                let deleteButton = document.createElement("button");
+                deleteButton.textContent = "🗑️"; 
+
+                deleteButton.onclick = function(){
+                    li.remove();
+                };
+                
+            
+
+               
+                li.appendChild(checkbox);
+                li.appendChild(taskTextElement);
+                li.appendChild(deleteButton);
+
+                document.getElementById("taskList").appendChild(li);
+                taskInput.value = "";
+            }
+        </script>
+    </body>
+</html>

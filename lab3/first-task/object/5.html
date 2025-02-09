@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function Calculater()  {
+                this.read = function(){
+                    this.a = +prompt('a?');
+                    this.b = +prompt('b?')
+                },
+                this.sum = function(){
+                    alert(this.a + this.b);
+                },
+                this.mul = function(){
+                    alert(this.a*this.b);
+                }
+
+            }
+            let calculate = new Calculater();
+            calculate.read();
+            calculate.sum();
+            calculate.mul()
+        </script>
+    </body>
+</html>

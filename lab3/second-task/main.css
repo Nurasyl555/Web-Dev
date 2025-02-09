@@ -1,0 +1,46 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: black;
+    height: 30px;
+    
+}
+
+h3 {
+    color:aliceblue;
+}
+
+.adder {
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+li {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+}
+button {
+    background-color: aqua;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+#taskInput {
+    width: 50%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
