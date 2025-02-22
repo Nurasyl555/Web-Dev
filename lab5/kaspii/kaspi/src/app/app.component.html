@@ -1,0 +1,12 @@
+<h1>Select a Category</h1>
+<div class="categories">
+  <button *ngFor="let category of categories" (click)="selectCategory(category)">
+    {{ category.name }}
+  </button>
+</div>
+
+
+<input type="text" placeholder="Search products..." [(ngModel)]="searchQuery">
+
+<!-- ✅ Показывает товары независимо от категорий -->
+<app-product-list [products]="filteredProducts"></app-product-list>

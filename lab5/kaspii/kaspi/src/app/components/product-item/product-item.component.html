@@ -1,0 +1,17 @@
+<div class="product-card">
+    <img [src]="product.image" alt="{{ product.name }}">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>⭐ Rating: {{ product.rating }}</p>
+    <p>❤️ Likes: {{ product.likes }}</p>
+    <button (click)="likeProduct()">Like</button>
+    <button (click)="removeProduct()">Remove</button>
+    
+    <a [href]="'https://kaspi.kz/shop/search/?text=' + product.name" target="_blank">
+      <button>More</button>
+    </a>
+  
+    <button (click)="shareOnTelegram()">📢 Share on Telegram</button>
+    <button (click)="shareOnWhatsApp()">📱 Share on WhatsApp</button>
+  </div>
+  
