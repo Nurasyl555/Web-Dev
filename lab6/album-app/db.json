@@ -1,0 +1,13 @@
+{
+    "albums": [
+      { "id": 1, "userId": 1, "title": "First Album" },
+      { "id": 2, "userId": 2, "title": "Second Album" },
+      { "id": 3, "userId": 3, "title": "Third Album" }
+    ],
+    "photos": [
+      { "id": 1, "albumId": 1, "title": "Photo 1", "url": "https://via.placeholder.com/150" },
+      { "id": 2, "albumId": 1, "title": "Photo 2", "url": "https://via.placeholder.com/150" },
+      { "id": 3, "albumId": 2, "title": "Photo 3", "url": "https://via.placeholder.com/150" }
+    ]
+  }
+  

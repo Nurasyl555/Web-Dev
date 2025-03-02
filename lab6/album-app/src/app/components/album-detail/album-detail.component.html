@@ -1,0 +1,6 @@
+<div *ngIf="album">
+    <h2>Редактирование альбома</h2>
+    <input [(ngModel)]="album.title" />
+    <button (click)="updateAlbum()">Сохранить</button>
+  </div>
+  
