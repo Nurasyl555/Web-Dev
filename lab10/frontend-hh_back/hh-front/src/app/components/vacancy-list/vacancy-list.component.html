@@ -1,0 +1,7 @@
+<h3>Vacancies</h3>
+<ul>
+  <li *ngFor="let vacancy of vacancies">
+    <strong>{{ vacancy.name }}</strong> — {{ vacancy.salary }} USD
+    <p>{{ vacancy.description }}</p>
+  </li>
+</ul>

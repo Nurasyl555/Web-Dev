@@ -3,12 +3,16 @@ import { Category, Product } from 'src/app/models';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProductListComponent } from './components/product-list/product-list.component';
-
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
+import { FormGroup } from '@angular/forms';
+import { ProductService } from './product.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, ProductListComponent, FormsModule],
+  imports: [CommonModule, ProductListComponent, FormsModule, RouterModule],
   templateUrl: './app.component.html',
+  
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -70,6 +74,9 @@ export class AppComponent {
 
   selectCategory(category: Category) {
     this.selectedCategory = category;
-    this.searchQuery = ''; // Сбросить поиск при смене категории
+    this.searchQuery = ''; 
+  }
+  constructor(private productService: ProductService) {
+    this.productService.setProducts(this.categories.flatMap(c => c.products));
   }
 }

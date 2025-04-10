@@ -1,0 +1,11 @@
+<div *ngIf="product" class="product-detail">
+    <img [src]="product?.image" alt="{{ product?.name }}">
+    <h2>{{ product?.name }}</h2>
+    <p>{{ product?.description }}</p>
+    <p>⭐ Rating: {{ product?.rating }}</p>
+    <p>❤️ Likes: {{ product?.likes }}</p>
+    <button (click)="increaseLikes()">Like</button>
+  
+
+  </div>
+  

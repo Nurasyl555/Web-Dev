@@ -8,5 +8,6 @@
 
 <input type="text" placeholder="Search products..." [(ngModel)]="searchQuery">
 
-<!-- ✅ Показывает товары независимо от категорий -->
+
 <app-product-list [products]="filteredProducts"></app-product-list>
+<router-outlet></router-outlet>

@@ -10,11 +10,11 @@ from django.views import View
 
 # Create your views here.
 def home(request):
-    return HttpResponse("Hello Muha")
+    return HttpResponse("home page")
 
-class ProductListView(DetailView):
-    def get_object(self, request):
-        products = list(Product.objects.values("id", "name", "description", "count", "is_active", "category_name"))
+class ProductListView(View):
+    def get(self, request):
+        products = list(Product.objects.values("id", "name", "description", "count", "is_active", "category__name"))
         return JsonResponse(products, safe=False, json_dumps_params={"indent": 2})
     
 class ProductDeteailView(View):
@@ -45,5 +45,5 @@ class CategoryDeteailView(View):
 class CategoryProductView(View):
     def get(self, request, id):
         category = get_object_or_404(Category, id=id)
-        product = list(category.product.values("id", "name", "description", "count", "is_active", "category_name"))
+        product = list(category.products.values("id", "name", "description", "count", "is_active", "category__name"))
         return JsonResponse(product, safe=False, json_dumps_params={"indent": 2})
